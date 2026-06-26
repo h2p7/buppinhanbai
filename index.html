@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オモニ会 物品販売注文サイト - 京都朝鮮第二初級学校</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="京都朝鮮第二初級学校オモニ会主催の物品販売注文受付サイトです。手作りキムチやチャンジャ、美味しい麺類などを販売しています。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;600;800&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styleheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-emoji">🇰🇷</span>
+                <span class="logo-text">オモニ会物販</span>
+            </a>
+            <nav class="main-nav">
+                <a href="#about">販売案内</a>
+                <a href="#products">商品一覧</a>
+                <a href="#contact">お問合せ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">京都朝鮮第二初級学校オモニ会</span>
+            <h1 class="hero-title">★ 物品販売のお知らせ ★</h1>
+            <p class="hero-desc">オモニ会特製のキムチや美味しい食材を取り揃えました。食卓を彩る本格的な味をぜひご家庭でご賞味ください！</p>
+            <div class="schedule-banner">
+                <div class="schedule-item">
+                    <span class="schedule-label"><i class="fa-regular fa-calendar-check"></i> 注文締切</span>
+                    <span class="schedule-date">4月28日 (火)</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-label"><i class="fa-solid fa-truck-ramp-box"></i> お渡し日</span>
+                    <span class="schedule-date">5月16日 (土) 午後〜</span>
+                </div>
+            </div>
+            <a href="#products" class="btn btn-primary btn-large">商品を見る <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Info / About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">販売・お受け取りについて</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>お渡し日時・場所</h3>
+                    <p><strong>5月16日 (土) 午後より</strong>お渡しを開始します。</p>
+                    <p class="highlight-text">※学校受取は14時～15時の間にお願いいたします。</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>お支払い方法</h3>
+                    <p>商品は<strong>「代金引換」</strong>でのお支払いとなります。商品のお受け取り時に代金をご用意ください。</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-snowflake"></i></div>
+                    <h3>保存について</h3>
+                    <p class="highlight-text">※キムチ、チャンジャは冷蔵保存にて2週間以内にお召し上がりください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">商品一覧</h2>
+            <p class="section-subtitle">お好きな商品を選んで「カートに追加」してください。</p>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">すべて</button>
+                <button class="tab-btn" data-category="kimchi">キムチ</button>
+                <button class="tab-btn" data-category="sozai">惣菜・オカズ</button>
+                <button class="tab-btn" data-category="noodle">麺類</button>
+                <button class="tab-btn" data-category="ingredient">食材・調味料</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                
+                <!-- === キムチカテゴリ === -->
+                <div class="product-card" data-category="kimchi" id="item-01">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_hakusai_500.png" alt="白菜キムチ (カット) 500g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">白菜キムチ (カット)</h3>
+                        <p class="product-volume">500g</p>
+                        <p class="product-desc">定番の白菜キムチ。食べやすいカットタイプです。オモニ会秘伝の味付けです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥600</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="01" data-name="白菜キムチ (カット) 500g" data-price="600">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-02">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_hakusai_1000.png" alt="白菜キムチ (カット) 1kg" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">白菜キムチ (カット)</h3>
+                        <p class="product-volume">1kg</p>
+                        <p class="product-desc">たっぷり楽しめる大容量の1kg。ファミリーやおすそ分けにも最適です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,200</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="02" data-name="白菜キムチ (カット) 1kg" data-price="1200">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-03">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_daikon.png" alt="大根キムチ 500g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">大根キムチ</h3>
+                        <p class="product-volume">500g</p>
+                        <p class="product-desc">コリコリとした歯ごたえがたまらないカクテキ（大根キムチ）です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥600</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="03" data-name="大根キムチ 500g" data-price="600">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-04">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_kyuri.png" alt="きゅうりキムチ 500g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">きゅうりキムチ</h3>
+                        <p class="product-volume">500g</p>
+                        <p class="product-desc">さっぱりとした辛さと、みずみずしい食感が特徴のオイキムチです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥600</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="04" data-name="きゅうりキムチ 500g" data-price="600">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-05">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_renkon.png" alt="レンコンキムチ 200g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">レンコンキムチ</h3>
+                        <p class="product-volume">200g</p>
+                        <p class="product-desc">レンコンのシャキシャキ感と特製ヤンニョンの旨味が絶妙な珍しいキムチです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥500</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="05" data-name="レンコンキムチ 200g" data-price="500">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-06">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_kiriboshi.png" alt="切干大根キムチ 400g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">切干大根キムチ</h3>
+                        <p class="product-volume">400g</p>
+                        <p class="product-desc">切干大根特有の強い甘みと歯ごたえに、辛味タレがよく絡む人気の逸品です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥700</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="06" data-name="切干大根キムチ 400g" data-price="700">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kimchi" id="item-07">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kimchi_korikori.png" alt="コリコリ 150g" class="product-image" loading="lazy">
+                        <span class="category-badge">キムチ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">コリコリ</h3>
+                        <p class="product-volume">150g</p>
+                        <p class="product-desc">その名の通りコリコリした小気味良い食感を楽しめる、おつまみにぴったりのキムチです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥600</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="07" data-name="コリコリ 150g" data-price="600">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <!-- === 惣菜カテゴリ === -->
+                <div class="product-card" data-category="sozai" id="item-08">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/gomanoha.png" alt="ごまの葉 (醤油漬け) 150g 30枚" class="product-image" loading="lazy">
+                        <span class="category-badge">惣菜・オカズ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ごまの葉 (醤油漬け)</h3>
+                        <p class="product-volume">150g (30枚)</p>
+                        <p class="product-desc">ご飯が進む醤油ベースの特性ダレで漬け込んだえごまの葉。お肉との相性も抜群です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥800</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="08" data-name="ごまの葉 (醤油漬け)" data-price="800">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sozai" id="item-09">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/ika_shiokara.png" alt="イカの塩辛キムチ 130g" class="product-image" loading="lazy">
+                        <span class="category-badge">惣菜・オカズ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">イカの塩辛キムチ</h3>
+                        <p class="product-volume">130g</p>
+                        <p class="product-desc">イカの濃厚な甘みと旨味に、甘辛い味付けがしっかり絡んだ本場仕込みの塩辛です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥700</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="09" data-name="イカの塩辛キムチ 130g" data-price="700">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sozai" id="item-10">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/chanja_430.png" alt="チャンジャ 430g" class="product-image" loading="lazy">
+                        <span class="category-badge">惣菜・オカズ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">チャンジャ</h3>
+                        <p class="product-volume">430g</p>
+                        <p class="product-desc">タラの胃袋をピリ辛ダレで熟成させた大人気の一品。食欲をそそる歯ごたえです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥2,100</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="10" data-name="チャンジャ 430g" data-price="2100">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sozai" id="item-11">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/chanja_200.png" alt="チャンジャハーフ 200g" class="product-image" loading="lazy">
+                        <span class="category-badge">惣菜・オカズ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">チャンジャハーフ</h3>
+                        <p class="product-volume">200g</p>
+                        <p class="product-desc">ちょっとしたお試しや少人数での消費にぴったりなハーフサイズボトルです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,200</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="11" data-name="チャンジャハーフ 200g" data-price="1200">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <!-- === 麺類カテゴリ === -->
+                <div class="product-card" data-category="noodle" id="item-12">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/udon_karbi.png" alt="塩カルビうどん 4食入り" class="product-image" loading="lazy">
+                        <span class="category-badge">麺類</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">塩カルビうどん</h3>
+                        <p class="product-volume">1セット (4食入り)</p>
+                        <p class="product-desc">肉のコクと塩味がモチモチのうどんにマッチする特選のうどんセットです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,000</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="12" data-name="塩カルビうどん (4食入)" data-price="1000">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="noodle" id="item-13">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/udon_yukke.png" alt="ユッケジャンうどん 4食入り" class="product-image" loading="lazy">
+                        <span class="category-badge">麺類</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ユッケジャンうどん</h3>
+                        <p class="product-volume">1セット (4食入り)</p>
+                        <p class="product-desc">牛肉のコクとピリッとした辛みがきいた、温まる本格ユッケジャンスープのうどんです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,000</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="13" data-name="ユッケジャンうどん (4食入)" data-price="1000">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="noodle" id="item-14">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/reimen.png" alt="韓国冷麺 4食入り" class="product-image" loading="lazy">
+                        <span class="category-badge">麺類</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">韓国冷麺</h3>
+                        <p class="product-volume">1セット (4食入り)</p>
+                        <p class="product-desc">のどごしの良い麺と、すっきり美味しいスープの定番冷麺セットです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,000</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="14" data-name="韓国冷麺 (4食入)" data-price="1000">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <!-- === 食材・調味料カテゴリ === -->
+                <div class="product-card" data-category="ingredient" id="item-15">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/irigoma.png" alt="いりごま 200g" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">いりごま</h3>
+                        <p class="product-volume">200g</p>
+                        <p class="product-desc">豊かな風味と香ばしさが魅力のいりごま。様々なナムルや料理のトッピングにどうぞ。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥300</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="15" data-name="いりごま 200g" data-price="300">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-16">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/yannyonjan.png" alt="ヤンニョンジャン 280g" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ヤンニョンジャン</h3>
+                        <p class="product-volume">280g</p>
+                        <p class="product-desc">料理にコクと辛みを与える万能薬味タレ。これ一つで本場の味になります。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥550</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="16" data-name="ヤンニョンジャン 280g" data-price="550">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-17">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/kochujan.png" alt="コチュジャン 280g" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">コチュジャン</h3>
+                        <p class="product-volume">280g</p>
+                        <p class="product-desc">本場の甘辛い唐辛子味噌。ビビンバやお肉料理、スープの隠し味に必須です。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥550</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="17" data-name="コチュジャン 280g" data-price="550">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-18">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/tokku_tokuyama.png" alt="トック (TOKUYAMA) 1kg" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">トック (TOKUYAMA)</h3>
+                        <p class="product-volume">1kg</p>
+                        <p class="product-desc">スープや鍋物に最適な韓国のお餅（トック）です。たっぷり使える1kg入り。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,100</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="18" data-name="トック (TOKUYAMA) 1kg" data-price="1100">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-19">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/tokku_yamaguchi.png" alt="トック (山口食品) 800g" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">トック (山口食品)</h3>
+                        <p class="product-volume">800g</p>
+                        <p class="product-desc">煮崩れしにくくもちもち食感が自慢の、山口食品製トックです。トッポギにもどうぞ。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,800</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="19" data-name="トック (山口食品) 800g" data-price="1800">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-20">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/iwanori.png" alt="岩のり (全形) 1袋20g×5束" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">岩のり (全形)</h3>
+                        <p class="product-volume">1袋 (20g×5束)</p>
+                        <p class="product-desc">磯の香りが非常に豊かな高品質な岩のりです。おつまみ、ご飯のお供、スープに。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,600</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="20" data-name="岩のり (全形)" data-price="1600">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ingredient" id="item-21">
+                    <div class="product-image-wrapper">
+                        <img src="images/products/yakiniku_tare.png" alt="焼肉のタレ 1L" class="product-image" loading="lazy">
+                        <span class="category-badge">食材・調味料</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">焼肉のタレ</h3>
+                        <p class="product-volume">1L</p>
+                        <p class="product-desc">大容量1リットル。お肉をもっと美味しくする、オモニ会自慢の本格タレです。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥1,000</span>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="数量">
+                                <button class="qty-btn plus-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-cart" type="button" data-id="21" data-name="焼肉のタレ 1L" data-price="1000">
+                            <i class="fa-solid fa-cart-plus"></i> カートに追加
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart-wrapper">
+        <button class="floating-cart-btn" id="open-cart-btn" aria-label="カートを見る">
+            <i class="fa-solid fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+        </button>
+    </div>
+
+    <!-- Cart Modal / Checkout Slide-out -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-overlay" id="cart-overlay"></div>
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>ご注文カート</h2>
+                <button class="close-modal-btn" id="close-cart-btn" aria-label="閉じる"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="cart-body">
+                <!-- Cart Items List -->
+                <div class="cart-items-container" id="cart-items">
+                    <!-- Dynamic items will be inserted here by script.js -->
+                    <p class="empty-cart-msg">カートに商品が入っていません。</p>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>合計品数:</span>
+                        <span id="summary-total-qty">0点</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>合計金額:</span>
+                        <span class="total-price" id="summary-total-price">¥0</span>
+                    </div>
+                </div>
+                
+                <!-- Checkout Form -->
+                <form id="order-form" class="order-form">
+                    <h3>【ご注文者情報】</h3>
+                    
+                    <div class="form-group">
+                        <label for="user-name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="user-name" name="user_name" placeholder="山田 太郎" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="user-branch">支部 / 分会 <span class="optional">任意</span></label>
+                        <input type="text" id="user-branch" name="user_branch" placeholder="○○支部 ○○分会">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="user-phone">電話番号 <span class="required">必須</span></label>
+                        <input type="tel" id="user-phone" name="user_phone" placeholder="090-1234-5678" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="order-notes">備考・ご要望</label>
+                        <textarea id="order-notes" name="order_notes" placeholder="受取時間の調整希望などがあればご記入ください。" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-info-box">
+                        <p><i class="fa-solid fa-circle-info"></i> 商品のお支払いは引き渡し時の<strong>代金引換</strong>となります。</p>
+                        <p><i class="fa-solid fa-circle-info"></i> ご注文内容は自動的にオモニ会管理者へ送信されます。</p>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit-order" id="submit-btn" disabled>
+                        注文を確定する (送信する)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact & Access Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <h3>京都朝鮮第二初級学校オモニ会</h3>
+                    <p><i class="fa-solid fa-map-location-dot"></i> 京都府京都市右京区嵯峨野秋野々町1番地 (学校所在地)</p>
+                    <p><i class="fa-solid fa-phone"></i> 電話でのご注文・お問い合わせ: <a href="tel:075-861-0608">075-861-0608</a></p>
+                    <p><i class="fa-solid fa-print"></i> FAXでのお問い合わせ: 075-861-0341</p>
+                </div>
+                <div class="contact-notice-block">
+                    <h4>注意事項</h4>
+                    <ul>
+                        <li>ご注文後のキャンセルや変更は、お手数ですが上記お電話まで直接ご連絡をお願いいたします。</li>
+                        <li>キムチやチャンジャは生ものですので、商品お渡し後は冷蔵庫で保管し、2週間以内にお召し上がりください。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 京都朝鮮第二初級学校オモニ会. All Rights Reserved.</p>
+            <p class="creator-tag">Designed & Built by Antigravity</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
